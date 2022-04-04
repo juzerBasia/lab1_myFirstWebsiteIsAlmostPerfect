@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!--first grid-->
+        <header class="header">
+            <h1>who will save my <span>agh</span>life?</h1>
+
+            <div id="div1" class="fa"></div>
+
+            <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+            <script>
+                function hourglass() {
+                    var a;
+                    a = document.getElementById("div1");
+                    a.innerHTML = "&#xf251;";
+                    setTimeout(function () {
+                        a.innerHTML = "&#xf252;";
+                    }, 1000);
+                    setTimeout(function () {
+                        a.innerHTML = "&#xf253;";
+                    }, 5000);
+                }
+                hourglass();
+                setInterval(hourglass, 3000);
+            </script>
+
+        </header>
+        <header class="m_header">
+
+            <img src="cartoon-girl.svg" alt="tu mial byc obrazek" class="header_me_picture">
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+            <div class="clock">Time left till Big Day in June <span id="time">***</span> </div>
+
+            <script>
+
+                // Set the date we're counting down to
+                var countDownDate = new Date("Jun 11, 2022 09:00:00").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function () {
+
+                    // Get today's date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Output the result in an element with id="time"
+                    document.getElementById("time").innerHTML = days + "d " + hours + "h "
+                        + minutes + "m " + seconds + "s ";
+
+                    // If the count down is over, write some text 
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("time").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+
+                jQuery(function ($) {
+
+                    var fiveMinutes = 60 * 1000,
+                        display = $('#time');
+                    startTimer(fiveMinutes, display);
+                });
+            </script>
+        </header>
+
+        <!--second grid-->
+        <div class="kontakt">
+            <h2 class="kontakt_h2">CONTACT ME </h2>
+            <form target="_blank">
+                <label for="m_fname">Name </label>
+                <input type="text" id="m_fname" name="firstname">
+
+                <label for="m_sname">Surname </label>
+                <input type="text" id="m_sname" name="surname">
+
+                <label for="message">Message</label>
+                <input type="text" id="message" name="message">
+
+                <label for="help"> Help with </label>
+                <select id="text" name="help">
+
+                    <option value="java"> Java </option>
+                    <option value="c++"> c++ </option>
+                    <option value="javascript"> Javascript </option>
+                    <option value="git"> git </option>
+                </select>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!--third grid-->
+        <div class="history">
+
+            <div>
+                <p><button onclick="myMove()">myStory</button></p>
+                <p>....no i jak tu zaczac...</p>
+                <p>zachcialo sie jej na agh podyplomowe robic..</p>
+                <p>nie ma lekko..</p>
+                <p> :) </p>
+
+                <div id="container">
+                    <div id="animate"></div>
+                </div>
+
+                <script>
+                    function myMove() {
+                        let id = null;
+                        const elem = document.getElementById("animate");
+                        let pos = 0;
+                        let pos1 = 0;
+                        
+                        clearInterval(id);
+                        id = setInterval(frame, 6);
+                        function frame() {
+                            if (pos == 209) {
+                                clearInterval(id);
+                            } else {
+                                pos++;
+                                pos1--;
+                                pos1--;
+                                elem.style.top = pos1 + "px";
+                                elem.style.left = pos + "px";
+                            }
+                        }
+                    }
+                </script>
+
+            </div>
+            <style>
+                #container {
+                    width: 100px;
+                    height: 100px;
+                    position: relative;
+                }
+
+                #animate {
+                    width: 15px;
+                    height: 15px;
+                    position: absolute;
+                    background-color: rgb(248, 244, 25);
+                    border-radius: 150px;
+                    border-color: white;
+                    border-width: 3px;
+                    border-style: dotted;
+                }
+            </style>
+
+            <body>
+        </div>
+
+        <!--fourth grid-->
+        <div class="tools">
+            <header class="tools_header">
+                <h2> narzedzia Moich Tortur</h2>
+            </header>
+
+            <section class="tools_box">
+                <a href="https://beginnersbook.com/java-tutorial-for-beginners-with-examples/"><img src="java-icon.svg"
+                        alt="ikona java" /></a>
+                <a href="https://www.w3schools.com/CPP/default.asp"><img src="c.svg" alt="ikona java" /></a>
+                <a href="https://www.w3schools.com/git/"><img src="git-icon.png" alt="ikona git" /></a>
+                <a href="https://javascript.info/"><img src="javascript.svg" alt="ikona java" /></a>
+            </section>
+
+        </div>
+
+        <footer>
+            <p>Basia 2022 </p>
+        </footer>
+
+</body>
+
+</html>
